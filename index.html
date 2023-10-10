@@ -1,15 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
+  <title>HSMAN 10 Yogyakarta</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap">
+  <script src="script.js"></script>
 </head>
+
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">SMAN 10 Yogyakarta</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto topnav">
+        <li class="nav-item active p-2">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">Academics</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">Event</a>
+        </li>
+        <li class="nav-item dropdown p-2">
+          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Resources
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Guru</a>
+            <a class="dropdown-item" href="#">Staff</a>
+            <a class="dropdown-item" href="#">Murid</a>
+          </div>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Sign In</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Customer Sign In</h4>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <label class="sr-only" for="usrname">Username</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+
+
+              <label class="sr-only" for="Password">Name</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
+                </div>
+                <input id="Password" type="password" class="form-control" placeholder="Password" aria-label="Password"
+                  aria-describedby="basic-addon2">
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Sign In</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid bg-light">
+    <div class="row" style=" height: 600px; overflow: hidden";>
+      <img src="Thumbnail.jpg" class="rounded-5" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+    </div>
+
+    <div class="row p-5 m-5">
+      <div class="col-6">
+        <div>
+          <h3>SMAN 10 Yogyakarta</h3>
+        </div>
+        <div>
+          <p>Sekolah Menengah Atas (SMA) Negeri 10 Yogyakarta adalah salah satu sekolah menengah atas yang ada di Yogyakarta. </p>
+        </div>
+      </div>
+      <div class="col-3" style="width: 1200px; height: 360px; overflow: hidden";>
+        <img src="photo2.jpg" class="rounded-5" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+      </div>
+      <div class="col">
+        <img src="head.jpg" class="rounded-5" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+      </div>
+    </div>
+
+    <div class="row mx-5 px-5">
+      <div class="col bg-success pt-5">
+        <h4>OUR EVENTS</h4>
+      </div>
+      <div class="col bg-primary pt-5">
+        <h4>OUR ORGANIZATIONS</h4>
+      </div>
+      <div class="col bg-info pt-5">
+        <h4>OUR CLASSROOM</h4>
+      </div>
+    </div>
+
+    <div class="row p-5 m-5 text-center">
+      <div>
+        <h3>WE HAVE FAITH IN OUR STUDENT FUTURE</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consectetur dolorum consequatur quidem, sed, aspernatur officia fugit fuga laudantium facere cum mollitia adipisci laboriosam nobis modi ipsum numquam autem nam!</p>
+      </div>
+    </div>
+
+    
+    <div class="row p-5 m-5 text-center">
+      <div>
+        <h3>ACADEMIC CALENDER</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consectetur dolorum consequatur quidem, sed, aspernatur officia fugit fuga laudantium facere cum mollitia adipisci laboriosam nobis modi ipsum numquam autem nam!</p>
+      </div>
+    </div>
+
+    <div class="row p-5 m-5 text-center">
+      <div>
+        <h3>NEWS</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consectetur dolorum consequatur quidem, sed, aspernatur officia fugit fuga laudantium facere cum mollitia adipisci laboriosam nobis modi ipsum numquam autem nam!</p>
+      </div>
+    </div>
+    
+    <div class="row p-5 m-5">
+      <div class="col border">
+        <div class="row">@sman10yk</div>
+        <div>
+          <img src="news1.jpg" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+        </div>
+      </div>
+      <div class="col border">
+        <div class="row bg-light p-2">@sman10yk</div>
+        <div>
+          <img src="news2.jpg" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+        </div>
+      </div>
+      <div class="col border">
+        <div class="row">@sman10yk</div>
+        <div>
+          <img src="news3.jpg" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 </body>
+
 </html>
