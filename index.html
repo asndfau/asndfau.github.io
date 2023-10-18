@@ -1,184 +1,532 @@
-<!DOCTYPE html>
+<html>
 
 <head>
-  <title>HSMAN 10 Yogyakarta</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap">
-  <script src="script.js"></script>
+    <title>asndfau's Web Profil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        .navbar {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-link {
+            padding-bottom: 5px;
+            /* Jarak antara teks dan garis */
+            transition: border-bottom;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            border-bottom: 3px solid #addcca;
+            /* Warna garis (warna primary Bootstrap) */
+        }
+
+        .about-me-section {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .about-me-section h6 {
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .about-me-section h2 {
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .about-me-section p {
+            font-weight: 400;
+            color: #555;
+        }
+
+        /* Warna dan style umum */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F7F8F3;
+        }
+
+        h3 {
+            color: #35495E;
+        }
+
+        .fas {
+            color: #35495E;
+        }
+
+        .skill-row {
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        .skill-row:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 15px rgba(53, 73, 94, 0.1);
+        }
+
+        h5 {
+            font-weight: 800;
+            font-size: 0.9em;
+            color: #35495E;
+        }
+
+        p {
+            font-size: 0.85em;
+        }
+
+        .skill-row:hover .fas {
+            transform: rotate(90deg);
+            transition: transform 0.3s;
+        }
+
+        /* Filter Tags */
+        .filter-tags button {
+            background-color: #ADDCCA;
+            /* hijau muda */
+            border-color: #ADDCCA;
+            color: #35495E;
+            /* warna teks saat tag belum dipilih */
+        }
+
+        .filter-tags button:hover {
+            background-color: #2C3D63;
+            /* biru tua saat di-hover */
+            border-color: #2C3D63;
+            color: #ffffff;
+            /* warna teks saat di-hover */
+        }
+
+        .filter-tags button.active {
+            background-color: #2C3D63;
+            /* biru tua saat aktif/dipilih */
+            border-color: #2C3D63;
+            color: #ffffff;
+            /* warna teks saat aktif/dipilih */
+        }
+
+        /* Kartu */
+        .card {
+            transition: all 0.3s;
+            /* transisi saat di-hover */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 15px rgba(44, 61, 99, 0.1);
+            /* bayangan dengan warna biru tua yang sedikit transparan */
+        }
+
+        .card .btn {
+            background-color: #ADDCCA;
+            /* hijau muda */
+            border-color: #ADDCCA;
+            color: #35495E;
+            /* warna teks button */
+        }
+
+        .card .btn:hover {
+            background-color: #2C3D63;
+            /* biru tua saat button di-hover */
+            border-color: #2C3D63;
+            color: #ffffff;
+            /* warna teks saat button di-hover */
+        }
+
+        .card-body {
+            position: relative;
+        }
+
+        .card-action {
+            position: absolute;
+            bottom: 10%;
+            /* Anda dapat menyesuaikan ini sesuai kebutuhan */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Ini akan memusatkan elemen secara horisontal */
+        }
+    </style>
+
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">SMAN 10 Yogyakarta</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const skillRows = document.querySelectorAll('.skill-row');
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto topnav">
-        <li class="nav-item active p-2">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#">Academics</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#">Event</a>
-        </li>
-        <li class="nav-item dropdown p-2">
-          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Resources
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Guru</a>
-            <a class="dropdown-item" href="#">Staff</a>
-            <a class="dropdown-item" href="#">Murid</a>
-          </div>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item p-2">
-          <a class="nav-link text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Sign In</a>
-        </li>
-      </ul>
-    </div>
+            skillRows.forEach(row => {
+                row.addEventListener('mouseover', function () {
+                    const icon = this.querySelector('.fas');
+                    icon.style.transform = 'rotate(180deg)';
+                });
 
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
+                row.addEventListener('mouseout', function () {
+                    const icon = this.querySelector('.fas');
+                    icon.style.transform = 'rotate(0deg)';
+                });
+            });
+        });
 
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Customer Sign In</h4>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filters = document.querySelectorAll('.filter-tags button');
+            const cards = document.querySelectorAll('.card-deck .card');
 
-          <!-- Modal body -->
-          <div class="modal-body">
-            <form>
-              <label class="sr-only" for="usrname">Username</label>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+            filters.forEach(filter => {
+                filter.addEventListener('click', function () {
+                    const tag = this.getAttribute('data-filter');
+
+                    filters.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    cards.forEach(card => {
+                        if (tag === 'all' || card.classList.contains(tag)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+    </script>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top px-5 py-3">
+        <a class="navbar-brand" href="#"><b>asndfau</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class=" nav-item p-2">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="#">Portofolio</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active ">
+                    <img src="Thumbnail.jpg" alt="Los Angeles" class="img-fluid"
+                        style="max-height: 750px; overflow: hidden">
+                    <div class="carousel-caption">
+                        <h3>Los Angeles</h3>
+                        <p>We had such a great time in LA!</p>
+                    </div>
                 </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                  aria-describedby="basic-addon1">
-              </div>
-
-
-              <label class="sr-only" for="Password">Name</label>
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
+                <div class="carousel-item">
+                    <img src="Thumbnail.jpg" alt="Chicago" class="img-fluid"
+                        style="max-height: 750px; overflow: hidden">
+                    <div class="carousel-caption">
+                        <h3>Chicago</h3>
+                        <p>Thank you, Chicago!</p>
+                    </div>
                 </div>
-                <input id="Password" type="password" class="form-control" placeholder="Password" aria-label="Password"
-                  aria-describedby="basic-addon2">
-              </div>
-            </form>
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Sign In</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
-
+                <div class="carousel-item">
+                    <img src="Thumbnail.jpg" alt="New York" class="img-fluid"
+                        style="max-height: 750px; overflow: hidden">
+                    <div class="carousel-caption">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
-      </div>
-    </div>
-  </nav>
+        <!-- <div class="row" style=" height: 750px; overflow: hidden" ;>
+            <img src="Thumbnail.jpg" class="rounded-5" alt="Cinque Terre"
+                style="object-fit: cover; width: 100%; height: 100%" ;>
+        </div> -->
 
-  <div class="container-fluid bg-light">
-    <div class="row" style=" height: 600px; overflow: hidden";>
-      <img src="Thumbnail.jpg" class="rounded-5" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
-    </div>
-
-    <div class="row p-5 m-5">
-      <div class="col-6">
-        <div>
-          <h3>SMAN 10 Yogyakarta</h3>
+        <div class="row p-5 mt-3 about-me-section">
+            <div class="col-2"></div>
+            <div class="col d-flex flex-column align-items-center justify-content-center pt-5">
+                <img src="profile-2.jpg" class="rounded-circle mb-3" alt="Foto Profil" width="100">
+                <div>
+                    <h6>Hello there!</h6>
+                    <h2>Hasna Daffa</h2>
+                    <p>I'm a tech enthusiast with a knack for Machine Learning and Software Engineering. While I take
+                        pride in my expertise, I believe there's always room to learn and grow. Making an impact,
+                        whether big or small, especially for the community around me, is what drives me. Let's see just
+                        how far I can go on this exciting path.</p>
+                    <p>And, on a lighter note, I have a soft spot for <span style="color: #ad5a3e;">red pandas!</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-2"></div>
         </div>
-        <div>
-          <p>Sekolah Menengah Atas (SMA) Negeri 10 Yogyakarta adalah salah satu sekolah menengah atas yang ada di Yogyakarta. </p>
+
+
+
+        <div class="row p-5 mt-3">
+            <div class="col-2"></div>
+            <!-- Kolom Data Scientist -->
+            <div class="col p-1 mr-2">
+                <div class="pb-4 text-center">
+                    <h3><b>Data Scientist</b></h3>
+                </div>
+
+                <!-- Skill 1: Machine Learning -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-brain fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>Machine Learning</h5>
+                        <p>Building and training machine learning models to predict patterns.</p>
+                    </div>
+                </div>
+
+                <!-- Skill 2: Data Visualization -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-chart-area fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>Data Visualization</h5>
+                        <p>Transforming data into insightful visuals using tools like Matplotlib and Seaborn.</p>
+                    </div>
+                </div>
+
+                <!-- Skill 3: Data Wrangling -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-database fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>Data Wrangling</h5>
+                        <p>Cleaning and transforming raw data to make it ready for analysis.</p>
+                    </div>
+                </div>
+
+                <!-- Skill 4: Statistical Analysis -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>Statistical Analysis</h5>
+                        <p>Using statistical methods to gather and analyze data to derive meaningful insights.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Anda dapat menambahkan lebih banyak skill jika diperlukan -->
+            </div>
+
+            <!-- Kolom Software Engineering -->
+            <div class="col p-1 ml-2">
+                <div class="pb-4 text-center">
+                    <h3><b>Software Engineering</b></h3>
+                </div>
+
+                <!-- Skill 1: Web Development -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-code fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>Web Development</h5>
+                        <p>Designing and developing responsive websites using HTML, CSS, and JavaScript.</p>
+                    </div>
+                </div>
+
+                <!-- Skill 2: Backend Development -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-server fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>Backend Development</h5>
+                        <p>Building server-side applications using languages like Python, Java, and SQL.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Skill 3: Version Control -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-code-branch fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>Version Control</h5>
+                        <p>Managing and tracking source code changes using tools like Git and GitHub.</p>
+                    </div>
+                </div>
+
+                <!-- Skill 4: Continuous Integration & Deployment -->
+                <div class="skill-row row mb-4">
+                    <div class="col-2">
+                        <i class="fas fa-cogs fa-2x"></i>
+                    </div>
+                    <div class="col">
+                        <h5>CI/CD</h5>
+                        <p>Automating the integration and deployment of code using pipelines and Jenkins.</p>
+                    </div>
+                </div>
+
+                <!-- Anda dapat menambahkan lebih banyak skill jika diperlukan -->
+            </div>
+            <div class="col-2"></div>
         </div>
-      </div>
-      <div class="col-3" style="width: 1200px; height: 360px; overflow: hidden";>
-        <img src="photo2.jpg" class="rounded-5" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
-      </div>
-      <div class="col">
-        <img src="head.jpg" class="rounded-5" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
-      </div>
-    </div>
 
-    <div class="row mx-5 px-5">
-      <div class="col bg-success pt-5">
-        <h4>OUR EVENTS</h4>
-      </div>
-      <div class="col bg-primary pt-5">
-        <h4>OUR ORGANIZATIONS</h4>
-      </div>
-      <div class="col bg-info pt-5">
-        <h4>OUR CLASSROOM</h4>
-      </div>
-    </div>
+        <div class="row p-5">
+            <div class="col-2"></div>
+            <div class="col">
+                <div class="pb-4 text-center">
+                    <h3><b>Portofolio</b></h3>
+                    <div class="filter-tags mt-3">
+                        <button class="btn  active" data-filter="all">Semua</button>
+                        <button class="btn " data-filter="tag1">Tag 1</button>
+                        <button class="btn " data-filter="tag2">Tag 2</button>
+                        <button class="btn " data-filter="tag3">Tag 3</button>
+                        <!-- Anda dapat menambahkan lebih banyak tag jika diperlukan -->
+                    </div>
+                </div>
+                <div class="card-deck mt-3 mb-5">
+                    <div class="card tag1 tag2">
+                        <img class="card-img-top" src="path_ke_gambar_project1.jpg" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">Deskripsi singkat tentang Project 1.</p>
+                            <a href="link_ke_project1.html" class="btn">Lihat Detail</a>
+                        </div>
+                    </div>
 
-    <div class="row p-5 m-5 text-center">
-      <div>
-        <h3>WE HAVE FAITH IN OUR STUDENT FUTURE</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consectetur dolorum consequatur quidem, sed, aspernatur officia fugit fuga laudantium facere cum mollitia adipisci laboriosam nobis modi ipsum numquam autem nam!</p>
-      </div>
-    </div>
+                    <div class="card tag2 tag3">
+                        <img class="card-img-top" src="path_ke_gambar_project2.jpg" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">Deskripsi singkat tentang Project 2.</p>
+                            <a href="link_ke_project2.html" class="btn">Lihat Detail</a>
+                        </div>
+                    </div>
 
-    
-    <div class="row p-5 m-5 text-center">
-      <div>
-        <h3>ACADEMIC CALENDER</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consectetur dolorum consequatur quidem, sed, aspernatur officia fugit fuga laudantium facere cum mollitia adipisci laboriosam nobis modi ipsum numquam autem nam!</p>
-      </div>
-    </div>
+                    <div class="card tag1 tag3">
+                        <img class="card-img-top" src="path_ke_gambar_project3.jpg" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">Deskripsi singkat tentang Project 3.</p>
+                            <a href="link_ke_project3.html" class="btn">Lihat Detail</a>
+                        </div>
+                    </div>
 
-    <div class="row p-5 m-5 text-center">
-      <div>
-        <h3>NEWS</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consectetur dolorum consequatur quidem, sed, aspernatur officia fugit fuga laudantium facere cum mollitia adipisci laboriosam nobis modi ipsum numquam autem nam!</p>
-      </div>
-    </div>
-    
-    <div class="row p-5 m-5">
-      <div class="col border">
-        <div class="row">@sman10yk</div>
-        <div>
-          <img src="news1.jpg" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+                    <div class="card tag1 tag3">
+                        <img class="card-img-top" src="path_ke_gambar_project4.jpg" alt="Project 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 4</h5>
+                            <p class="card-text">Deskripsi singkat tentang Project 4.</p>
+                            <a href="link_ke_project4.html" class="btn">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
         </div>
-      </div>
-      <div class="col border">
-        <div class="row bg-light p-2">@sman10yk</div>
-        <div>
-          <img src="news2.jpg" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+
+        <div class="row p-5 mt-5">
+            <div class="col-2"></div>
+            <!-- Judul "Blog" di sisi kiri -->
+            <div class="col-3 mb-4">
+                <h2>Blog</h2>
+            </div>
+            <!-- Komponen artikel di sisi kanan -->
+            <div class="col">
+                <!-- Artikel 1 -->
+                <a href="path_ke_artikel1.html" class="text-decoration-none mb-4">
+                    <div class="row border rounded bg-white">
+                        <div class="col-4">
+                            <img src="path_ke_gambar_artikel1.jpg" alt="Artikel 1" class="img-fluid rounded-right">
+                        </div>
+                        <div class="col-8 d-flex align-items-center">
+                            <h6 class="text-dark mb-0">Judul Artikel 1</h6>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Artikel 2 -->
+                <a href="path_ke_artikel2.html" class="text-decoration-none mt-4">
+                    <div class="row border rounded bg-white">
+                        <div class="col-4">
+                            <img src="path_ke_gambar_artikel2.jpg" alt="Artikel 2" class="img-fluid rounded-right">
+                        </div>
+                        <div class="col-8 d-flex align-items-center">
+                            <h6 class="text-dark mb-0">Judul Artikel 2</h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-2"></div>
         </div>
-      </div>
-      <div class="col border">
-        <div class="row">@sman10yk</div>
-        <div>
-          <img src="news3.jpg" alt="Cinque Terre" style="object-fit: cover; width: 100%; height: 100%";>
+        
+        <div class="row p-5 mt-3">
+            <div class="col-2"></div>
+            <!-- Judul "Kontak" di sisi kiri -->
+            <div class="col-3 mb-4">
+                <h2>Kontak</h2>
+                <p>Jika Anda tertarik untuk berkolaborasi, silakan isi formulir di bawah ini.</p>
+            </div>
+            <!-- Formulir Kontak di sisi kanan -->
+            <div class="col">
+                <form action="path_to_your_backend_processing_script" method="post">
+                    <div class="form-group">
+                        <label for="nama">Nama:</label>
+                        <input type="text" class="form-control" id="nama" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan">Pesan:</label>
+                        <textarea class="form-control" id="pesan" name="pesan" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </form>
+            </div>
+            <div class="col-2"></div>
         </div>
-      </div>
+
+
     </div>
 
-  </div>
+
+
 
 </body>
 
