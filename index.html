@@ -19,14 +19,12 @@
 
         .nav-link {
             padding-bottom: 5px;
-            /* Jarak antara teks dan garis */
             transition: border-bottom;
         }
 
         .nav-link:hover,
         .nav-link:focus {
             border-bottom: 3px solid #addcca;
-            /* Warna garis (warna primary Bootstrap) */
         }
 
         .about-me-section {
@@ -50,7 +48,6 @@
             color: #555;
         }
 
-        /* Warna dan style umum */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #F7F8F3;
@@ -91,57 +88,43 @@
             transition: transform 0.3s;
         }
 
-        /* Filter Tags */
         .filter-tags button {
             background-color: #ADDCCA;
-            /* hijau muda */
             border-color: #ADDCCA;
             color: #35495E;
-            /* warna teks saat tag belum dipilih */
         }
 
         .filter-tags button:hover {
             background-color: #2C3D63;
-            /* biru tua saat di-hover */
             border-color: #2C3D63;
             color: #ffffff;
-            /* warna teks saat di-hover */
         }
 
         .filter-tags button.active {
             background-color: #2C3D63;
-            /* biru tua saat aktif/dipilih */
             border-color: #2C3D63;
             color: #ffffff;
-            /* warna teks saat aktif/dipilih */
         }
 
-        /* Kartu */
         .card {
             transition: all 0.3s;
-            /* transisi saat di-hover */
         }
 
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0px 10px 15px rgba(44, 61, 99, 0.1);
-            /* bayangan dengan warna biru tua yang sedikit transparan */
         }
 
         .card .btn {
             background-color: #ADDCCA;
-            /* hijau muda */
             border-color: #ADDCCA;
             color: #35495E;
-            /* warna teks button */
         }
 
         .card .btn:hover {
             background-color: #2C3D63;
-            /* biru tua saat button di-hover */
             border-color: #2C3D63;
             color: #ffffff;
-            /* warna teks saat button di-hover */
         }
 
         .card-body {
@@ -151,15 +134,12 @@
         .card-action {
             position: absolute;
             bottom: 10%;
-            /* Anda dapat menyesuaikan ini sesuai kebutuhan */
             left: 50%;
             transform: translateX(-50%);
-            /* Ini akan memusatkan elemen secara horisontal */
         }
 
         #demo {
             max-height: 600px;
-            /* Anda dapat mengatur ini sesuai dengan keinginan */
             overflow: hidden;
         }
 
@@ -168,11 +148,12 @@
             height: 100%;
             object-fit: cover;
         }
+
     </style>
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const skillRows = document.querySelectorAll('.skill-row');
@@ -216,26 +197,26 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top px-5 py-3">
         <a class="navbar-brand" href="#"><b>asndfau</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myScrollspy"
+            aria-controls="myScrollspy" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="myScrollspy">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item p-2">
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class=" nav-item p-2">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" href="#">Portofolio</a>
+                    <a class="nav-link" href="#portofolio">Portofolio</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="#blog">Blog</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -286,7 +267,7 @@
         </div>
 
         <!-- About Me -->
-        <div class="row p-5 about-me-section">
+        <div class="row p-5 about-me-section" id="about">
             <div class="col-2"></div>
             <div class="col d-flex flex-column align-items-center justify-content-center pt-5">
                 <img src="profile-2.jpg" class="rounded-circle mb-3" alt="Foto Profil" width="100">
@@ -412,15 +393,13 @@
                         <p>Automating the integration and deployment of code using pipelines and Jenkins.</p>
                     </div>
                 </div>
-
-
             </div>
             <div class="col-2"></div>
         </div>
-
-
+        <div class="row p-5" style="background-color: #F7F8F3;" id="blog"></div>
         <!-- Blog -->
         <div class="row p-5 mt-5" style="background-color: #ADDCCA;">
+            <div></div>
             <div class="col-2"></div>
 
             <div class="col-3 mb-4">
@@ -435,7 +414,7 @@
                             <a href="path_ke_artikel1.html" class="text-decoration-none mb-4">
                                 <div class="row border rounded bg-white">
                                     <div class="col-2">
-                                        <img src="profile-2.jpg" alt="Artikel 1" class="img-fluid rounded-right"
+                                        <img src="blog-3.png" alt="Artikel 1" class="img-fluid rounded-right"
                                             style="width: 75px;">
                                     </div>
                                     <div class="col d-flex align-items-center">
@@ -449,7 +428,7 @@
                             <a href="path_ke_artikel2.html" class="text-decoration-none">
                                 <div class="row border rounded bg-white">
                                     <div class="col-2">
-                                        <img src="profile-2.jpg" alt="Artikel 2" class="img-fluid rounded-right"
+                                        <img src="blog-2.png" alt="Artikel 2" class="img-fluid rounded-right"
                                             style="width: 75px;">
                                     </div>
                                     <div class="col d-flex align-items-center">
@@ -463,7 +442,7 @@
                             <a href="path_ke_artikel2.html" class="text-decoration-none">
                                 <div class="row border rounded bg-white">
                                     <div class="col-2">
-                                        <img src="profile-2.jpg" alt="Artikel 3" class="img-fluid rounded-right"
+                                        <img src="blog-1.png" alt="Artikel 3" class="img-fluid rounded-right"
                                             style="width: 75px;">
                                     </div>
                                     <div class="col d-flex align-items-center">
@@ -490,27 +469,26 @@
 
                 </div>
             </div>
-
             <div class="col-2"></div>
         </div>
 
         <!-- Portofolio -->
-        <div class="row p-5 mb-5 mt-5">
+        <div class="row p-5 mb-5 mt-5"  id="portofolio">
             <div class="col-2"></div>
             <div class="col">
                 <div class="pb-4 text-center">
                     <h1><b>Portofolio</b></h1>
                     <div class="filter-tags mt-3">
                         <button class="btn  active" data-filter="all">Semua</button>
-                        <button class="btn " data-filter="tag1">Tag 1</button>
-                        <button class="btn " data-filter="tag2">Tag 2</button>
-                        <button class="btn " data-filter="tag3">Tag 3</button>
+                        <button class="btn " data-filter="tag1">Deep Learning</button>
+                        <button class="btn " data-filter="tag2">Machine Learning</button>
+                        <button class="btn " data-filter="tag3">Software Engineering</button>
 
                     </div>
                 </div>
                 <div class="card-deck mt-3 mb-5">
                     <div class="card tag1 tag2 mb-5">
-                        <img class="card-img-top" src="profile-2.jpg" alt="Project 1">
+                        <img class="card-img-top" src="porto-1.jpeg" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">Data-Driven Analysis of H1N1 (Swine Flu) Evolution and Its Impact on
                                 Public Health</h5>
@@ -521,8 +499,8 @@
                         </div>
                     </div>
 
-                    <div class="card tag2 tag3 mb-5">
-                        <img class="card-img-top" src="profile-2.jpg" alt="Project 2">
+                    <div class="card tag1 tag2 mb-5">
+                        <img class="card-img-top" src="porto-2.png" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title">Predictive Modeling of Salaries Based on Job Listings Data</h5>
                             <p class="card-text">this project employs advanced data science techniques to predict
@@ -532,8 +510,8 @@
                         </div>
                     </div>
 
-                    <div class="card tag1 tag3 mb-5">
-                        <img class="card-img-top" src="profile-2.jpg" alt="Project 3">
+                    <div class="card tag3 mb-5">
+                        <img class="card-img-top" src="porto-3.png" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title">Development of a Dynamic E-commerce Web Application for Small
                                 Businesses</h5>
@@ -545,8 +523,8 @@
                         </div>
                     </div>
 
-                    <div class="card tag1 tag3 mb-5">
-                        <img class="card-img-top" src="profile-2.jpg" alt="Project 4">
+                    <div class="card tag3 mb-5">
+                        <img class="card-img-top" src="porto-4.png" alt="Project 4">
                         <div class="card-body">
                             <h5 class="card-title">Development and Implementation of a Scalable Cloud-Based E-Commerce
                                 Platform</h5>
@@ -563,7 +541,7 @@
         </div>
 
         <!-- Contact -->
-        <div class="row p-5 mt-3" style="background-color: #35495E; color: #F7F8F3;">
+        <div class="row p-5 mt-3" style="background-color: #35495E; color: #F7F8F3;" id="contact">
             <div class="col-2"></div>
 
             <div class="col-3 mb-4">
@@ -582,7 +560,7 @@
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="pesan">Tell me about the project :</label>
+                        <label for="pesan">Tell me about the project</label>
                         <textarea class="form-control" id="pesan" name="pesan" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send</button>
@@ -593,6 +571,7 @@
 
 
     </div>
+
 </body>
 
 </html>
